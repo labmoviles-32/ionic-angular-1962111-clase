@@ -9,6 +9,7 @@ import { PerfilComponent } from './perfil/perfil.component';
 import { PublicacionesComponent } from './publicaciones/publicaciones.component';
 
 import { FormsModule } from '@angular/forms';
+import { RoutesModule } from './routes.module';
 
 @NgModule({
   declarations: [
@@ -21,9 +22,11 @@ import { FormsModule } from '@angular/forms';
     BrowserModule,
     FormsModule,
     AppRoutingModule,
-    IonicModule.forRoot()
+    IonicModule.forRoot(),
+    RoutesModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent], 
+  exports: [RoutesModule]
 })
 export class AppModule { }
