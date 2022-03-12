@@ -8,6 +8,10 @@ import { IonicModule } from '@ionic/angular';
 import { PerfilComponent } from './perfil/perfil.component';
 import { PublicacionesComponent } from './publicaciones/publicaciones.component';
 
+import { TabsComponent } from './tabs/tabs.component';
+
+import { PublicacionComponent } from './publicacion/publicacion.component';
+
 import { FormsModule } from '@angular/forms';
 import { RoutesModule } from './routes.module';
 
@@ -16,6 +20,8 @@ import { RoutesModule } from './routes.module';
     AppComponent,
     FeedComponent,
     PerfilComponent,
+    TabsComponent,
+    PublicacionComponent,
     PublicacionesComponent
   ],
   imports: [
