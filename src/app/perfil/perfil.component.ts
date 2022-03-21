@@ -1,6 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
 ///import { Input } from '@angular/forms';
 
+import { HttpClient } from '@angular/common/http';
+
 @Component({
   selector: 'app-perfil',
   templateUrl: './perfil.component.html',
@@ -8,20 +10,13 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class PerfilComponent implements OnInit {
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
+    this.getDatosUsuario();
   }
 
-  usuario = {
-    "nombre": "Ruffles", 
-    "usuario": "@ruffles", 
-    "descripcion": "Guau", 
-    "followers": 34324, 
-    "following": 2, 
-    "posts": 123 ,
-    "fotodeperfil": "assets/imagenes/Ruffles.png"
-  }
+  usuario : any = {}
 
   editando = false;
 
@@ -33,5 +28,12 @@ export class PerfilComponent implements OnInit {
 
   guardarBio(): void {
     this.usuario.descripcion = this.bio;
-  }  
+  }
+  
+  getDatosUsuario(): void {
+    this.http.get('https://insta-base-32-default-rtdb.firebaseio.com/usuario.json').subscribe(res => {
+      console.log(res);
+      this.usuario = res;
+    })
+  }
 }

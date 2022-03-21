@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { BdServiceService } from '../bd-service.service';
 
 @Component({
   selector: 'app-publicaciones',
@@ -7,37 +9,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PublicacionesComponent implements OnInit {
 
-  constructor() { }
+  constructor(private http: HttpClient, private bd: BdServiceService) { }
 
   ngOnInit(): void {
+    this.bd.getPublicacionesUsuario().subscribe(res => {
+      this.publicaciones = res;
+    })
   }
 
-  publicaciones = [
-    {
-      "id": "432dffds8", 
-      "imagen": "assets/imagenes/1.png",
+  publicaciones : any = [];
 
-    }, 
-    {
-      "id": "432dffds8dlkfd", 
-      "imagen": "assets/imagenes/2.png",
+  activo = 'grid';
 
-    }, 
-    {
-      "id": "3c", 
-      "imagen": "assets/imagenes/3.png",
-
-    }, 
-    {
-      "id": "2b", 
-      "imagen": "assets/imagenes/4.png",
-
-    }, 
-    {
-      "id": "1a", 
-      "imagen": "assets/imagenes/5.png",
-
-    }
-  ]
-
+  toggleActivo(activo: string):void {
+    this.activo = activo;
+  }
+  
 }
