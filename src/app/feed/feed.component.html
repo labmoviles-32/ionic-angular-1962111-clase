@@ -25,12 +25,16 @@
                                     </div>
                                     </ion-col>
                                 <ion-col size="2">
-                                    <ion-button fill="translucent" id="trigger-opciones-{{post.id}}" class="trigger"><ion-icon name="ellipsis-horizontal-outline"></ion-icon></ion-button>
-                                    <ion-popover [isOpen]="isPopoverOpen" trigger="trigger-opciones-{{post.id}}" show-backdrop="false">
+                                    
+                                    <ion-button>
+                                        Borrar
+                                    </ion-button>
+                                    <ion-button fill="translucent" id="trigger-popup--{{post.id}}" class="trigger"><ion-icon name="ellipsis-horizontal-outline"></ion-icon></ion-button>
+                                    <ion-popover trigger="trigger-popup--{{post.id}}">
                                         <ng-template>
-                                          <app-popover-content></app-popover-content>
+                                            <app-popover></app-popover>
                                         </ng-template>
-                                      </ion-popover>
+                                    </ion-popover>
                                 </ion-col>
                             </ion-row>
                         </ion-grid>

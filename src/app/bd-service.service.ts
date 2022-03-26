@@ -26,10 +26,19 @@ export class BdServiceService {
 
 
   //POST
+  postPublicacion(post: any) {
+    return this.http.post('https://insta-base-32-default-rtdb.firebaseio.com/usuario/publicaciones.json', post)
+  }
 
 
   //DELETE
+  deletePublicacion(idPost: any){
+    //return this.http.post('https://insta-base-32-default-rtdb.firebaseio.com/usuario/publicaciones.json', idPost)
+  }
+
+ 
 
   //PUT
+  updatePublicacion() {}
 
 }

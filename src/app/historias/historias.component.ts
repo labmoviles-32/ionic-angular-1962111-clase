@@ -12,4 +12,5 @@ export class HistoriasComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  historias: any = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 }

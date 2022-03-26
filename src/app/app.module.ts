@@ -22,6 +22,8 @@ import { HistoriaContenidoComponent } from './historia-contenido/historia-conten
 //WIP
 import { environment } from 'src/environments/environment';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { PopoverComponent } from './popover/popover.component';
+import { PostComponent } from './post/post.component';
 
 @NgModule({
   declarations: [
@@ -30,9 +32,11 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
     PerfilComponent,
     TabsComponent,
     PopoverContentComponent,
+    PopoverComponent,
     HistoriasComponent,
     HistoriaContenidoComponent,
     PublicacionComponent,
+    PostComponent,
     PublicacionesComponent
   ],
   imports: [
