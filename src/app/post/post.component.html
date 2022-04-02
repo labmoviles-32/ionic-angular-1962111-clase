@@ -1,1 +1,5 @@
-<p> Seccion en construccion</p>
+<form #F = "ngForm" (ngSubmit)="onSubmit(F)" ngNativeValidate> <!--novalidate-->
+    <ion-input placeholder="caption" required></ion-input>
+    <!--<button>Subir</button>-->
+    <ion-button type="submit">Postear</ion-button>
+</form>

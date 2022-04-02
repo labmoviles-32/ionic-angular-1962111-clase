@@ -25,6 +25,10 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { PopoverComponent } from './popover/popover.component';
 import { PostComponent } from './post/post.component';
 
+import { ReactiveFormsModule } from '@angular/forms';
+import { initializeApp , provideFirebaseApp} from '@angular/fire/app';
+//import {provideFirestore} from '@angular/fire/firestore';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -41,10 +45,12 @@ import { PostComponent } from './post/post.component';
   ],
   imports: [
     BrowserModule,
+    ReactiveFormsModule,
     FormsModule,
     HttpClientModule,
     AppRoutingModule,
     IonicModule.forRoot(),
+    provideFirebaseApp(() => initializeApp(environment.firebaseConfig)),
     RoutesModule, 
   ],
   providers: [],

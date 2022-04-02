@@ -18,20 +18,22 @@ export class FeedComponent implements OnInit {
     private popover: PopoverController) { }
 
   ngOnInit(): void {
-    this.db.getPublicaciones().subscribe(res => {
-      this.posts = res;
-      
-    })
+    this.cargarFeed();
   }
 
   posts: any = [];
 
   isPopoverOpen: boolean = false;
 
+  cargarFeed() {
+    this.db.getPublicaciones().subscribe(res => {
+      this.posts = res;
+      
+    })
+  }
   
-  borrar(postId: any): void {
-    
-    //this.db.deletePublicacion(id);
+  borrar(postIndex: number): void {
+    this.db.deletePublicacion(postIndex);
   }
 
 }

@@ -32,8 +32,8 @@ export class BdServiceService {
 
 
   //DELETE
-  deletePublicacion(idPost: any){
-    //return this.http.post('https://insta-base-32-default-rtdb.firebaseio.com/usuario/publicaciones.json', idPost)
+  deletePublicacion(idPost: number){
+    return this.http.delete('https://insta-base-32-default-rtdb.firebaseio.com/usuario/publicaciones.json', idPost)
   }
 
  
