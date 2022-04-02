@@ -1,5 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { BdServiceService } from '../bd-service.service';
+
+
 
 @Component({
   selector: 'app-post',
@@ -8,13 +11,24 @@ import { NgForm } from '@angular/forms';
 })
 export class PostComponent implements OnInit {
 
-  constructor() { }
+  constructor(private bd : BdServiceService) { }
 
   ngOnInit(): void {
   }
 
   onSubmit(f: NgForm) {
     console.log("Submit")
+  }
+
+  nuevoPost : any = {
+    "caption": "", 
+    "id": "", 
+    "imagen": "/imagenes/Ruffles.png", 
+    "usuario": "@ruffles"
+  }
+
+  subir() {
+    this.bd.postPublicacion(this.nuevoPost).subscribe();
   }
 
 }
