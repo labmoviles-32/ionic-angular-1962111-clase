@@ -1,0 +1,6 @@
+<form #F = "ngForm" (ngSubmit)="onSubmit(F)" ngNativeValidate>
+    <ion-label>Caption: </ion-label>
+    <ion-input placeholder="Ejemplo: Cancun..." required></ion-input>
+    {{nuevoPost.caption}}
+    <ion-button type="submit">Subir Foto</ion-button>
+</form>

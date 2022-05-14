@@ -5,18 +5,56 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FeedComponent } from './feed/feed.component';
 import { IonicModule } from '@ionic/angular';
+import { PerfilComponent } from './perfil/perfil.component';
+import { PublicacionesComponent } from './publicaciones/publicaciones.component';
+
+import { TabsComponent } from './tabs/tabs.component';
+
+import { PublicacionComponent } from './publicacion/publicacion.component';
+
+import { FormsModule } from '@angular/forms';
+import { RoutesModule } from './routes.module';
+
+import { PopoverContentComponent } from './popover-content/popover-content.component';
+import { HistoriasComponent } from './historias/historias.component';
+import { HistoriaContenidoComponent } from './historia-contenido/historia-contenido.component';
+
+//WIP
+import { environment } from 'src/environments/environment';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { PopoverComponent } from './popover/popover.component';
+import { PostComponent } from './post/post.component';
+
+import { ReactiveFormsModule } from '@angular/forms';
+import { initializeApp , provideFirebaseApp} from '@angular/fire/app';
+//import {provideFirestore} from '@angular/fire/firestore';
 
 @NgModule({
   declarations: [
     AppComponent,
-    FeedComponent
+    FeedComponent,
+    PerfilComponent,
+    TabsComponent,
+    PopoverContentComponent,
+    PopoverComponent,
+    HistoriasComponent,
+    HistoriaContenidoComponent,
+    PublicacionComponent,
+    PostComponent,
+    PublicacionesComponent
   ],
   imports: [
     BrowserModule,
+    ReactiveFormsModule,
+    FormsModule,
+    HttpClientModule,
     AppRoutingModule,
-    IonicModule.forRoot()
+    IonicModule.forRoot(),
+    provideFirebaseApp(() => initializeApp(environment.firebaseConfig)),
+    RoutesModule, 
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent], 
+  exports: [RoutesModule]
 })
 export class AppModule { }

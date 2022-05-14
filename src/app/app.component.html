@@ -1,22 +1,63 @@
-<h1>hola, mundo!</h1>
-
-
-<app-feed></app-feed>
-<!--
-
-
-<p>{{title}}</p>
-
-<p *ngIf="esCierto">Hello, world</p>
-
-<div *ngFor="let imagen of imagenes">
-  imagen
-  <img src="assets/perrillo.jpeg" alt="" width="250px">
-</div>
-
-<div *ngFor="let perrillo of perrillos">
-  <p>{{perrillo.nombre}}</p>
-  <img src="{{perrillo.src}}" alt="">
-</div>
-
--->
+<ion-app mode="ios">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>
+        <div class="container">
+          <ion-label>Instagram</ion-label>
+          <div class="notificaciones">
+            <ion-button fill="translucent" id="trigger-notificaciones">
+              <ion-icon name="heart-outline"></ion-icon>
+            </ion-button>
+            <ion-popover trigger="trigger-notificaciones" show-backdrop="false">
+              <ng-template>
+                <!--notificaciones aqui-->
+                <ion-list>
+                  <ion-item>
+                    Notificacion
+                  </ion-item>
+                </ion-list>
+              </ng-template>
+            </ion-popover>
+          </div>
+         <div class="perfil">
+          <ion-avatar>
+            <ion-img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y" id="user-header-pic"></ion-img>
+            <ion-popover trigger="user-header-pic">
+              <ng-template>
+                <ion-list>
+                  <ion-item>
+                    <ion-label>
+                      Cerrar Sesion
+                    </ion-label>
+                  </ion-item>
+                </ion-list>
+              </ng-template>
+            </ion-popover>
+          </ion-avatar>
+          <!--
+            <ion-avatar>
+            <ion-img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y" width="40px" id="trigger-logout-button"></ion-img>
+            <ion-popover trigger="trigger-logout-button" show-backdrop="false">
+              <ng-template>
+                <ion-list>
+                  <ion-item>
+                    <ion-label>
+                      Cerrar Sesion
+                    </ion-label>
+                  </ion-item>
+                </ion-list>
+              </ng-template>
+            </ion-popover>
+          </ion-avatar>
+          -->
+         </div>
+        </div>
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+  
+    <app-tabs></app-tabs>
+  </ion-content>
+  
+</ion-app>
