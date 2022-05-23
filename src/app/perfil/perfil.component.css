@@ -21,3 +21,9 @@
 .borde-input {
     border: solid 1px black;
 }
+
+
+
+ion-grid {
+    margin: 0;
+} 

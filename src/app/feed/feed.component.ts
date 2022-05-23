@@ -1,28 +1,37 @@
 import { Component, OnInit } from '@angular/core';
+import {HttpClient}  from '@angular/common/http';
+
+import { BdServiceService } from '../bd-service.service';
+
+import { PopoverController } from '@ionic/angular';
+import { PopoverComponent } from '../popover/popover.component';
 
 @Component({
   selector: 'app-feed',
-  templateUrl: './feed.component.html',
-  styleUrls: ['./feed.component.css']
+@@ -11,16 +12,26 @@ import { BdServiceService } from '../bd-service.service';
 })
 export class FeedComponent implements OnInit {
 
-  constructor() { }
+   constructor(
+    private http: HttpClient, 
+    private db: BdServiceService, 
+    private popover: PopoverController) { }
 
   ngOnInit(): void {
+    this.db.getPublicaciones().subscribe(res => {
+      this.posts = res;
+
+    })
   }
 
-  perrillos = [
-    {
-      "usuario": "@unosperrillos",
-      "src": "assets/perrillo.jpeg",
-      "caption": "unos perrillos...."
-    },
-    {
-      "usuario": "@amsiedad",
-      "src": "assets/amsiedad.jpeg",
-      "caption": "me da amsiedad"
-    },
-  ]
+  posts: any = [];
+
+  isPopoverOpen: boolean = false;
+
+
+  borrar(postId: any): void {
+
+    //this.db.deletePublicacion(id);
+  }
 
 }

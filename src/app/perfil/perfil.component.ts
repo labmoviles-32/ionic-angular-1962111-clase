@@ -31,7 +31,8 @@ export class PerfilComponent implements OnInit {
 
   @Input() bio: string = "";
 
-  guardarBio(): void {
+  guardarNuevaBio(): void {
     this.usuario.descripcion = this.bio;
+    this.toggleEditar();
   }  
 }
